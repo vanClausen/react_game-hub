@@ -5,7 +5,7 @@ import {
   FaApple,
   FaLinux,
   FaAndroid,
-} from "React-icons/fa";
+} from "react-icons/fa";
 import { SiNintendo } from "react-icons/si";
 import { MdPhoneIphone } from "react-icons/all";
 import { BsGlobe } from "react-icons/all";
