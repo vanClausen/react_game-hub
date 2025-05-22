@@ -12,7 +12,7 @@ import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
   selectedGenre: Genre | null;
-  onSelectGenre: (genre: Genre) => void;
+  onSelectGenre: (genre: Genre | null) => void;
 }
 
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
@@ -28,6 +28,20 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
         Genres
       </Heading>
       <List>
+        {selectedGenre && (
+          <ListItem key="0" paddingY="5px">
+            <Button
+              whiteSpace="normal"
+              textAlign="left"
+              variant="link"
+              fontWeight="normal"
+              fontSize="m"
+              onClick={() => onSelectGenre(null)}
+            >
+              All Genres
+            </Button>
+          </ListItem>
+        )}
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
