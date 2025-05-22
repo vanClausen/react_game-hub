@@ -34,8 +34,8 @@ A responsive single-page application built with React and Vite. It uses the [RAW
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/gamehub.git
-cd gamehub
+git clone https://github.com/vanClausen/react_game-hub.git
+cd react_game-hub
 npm install
 npm run dev
 ```
