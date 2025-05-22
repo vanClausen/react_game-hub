@@ -5,9 +5,10 @@ import { Image, ImageProps } from "@chakra-ui/react";
 
 interface Props {
   rating: number;
+  style?: ImageProps;
 }
 
-const Emoji = ({ rating }: Props) => {
+const Emoji = ({ rating, style }: Props) => {
   if (rating < 3) return null;
 
   const emojiMap: { [key: number]: ImageProps } = {
@@ -16,7 +17,18 @@ const Emoji = ({ rating }: Props) => {
     5: { src: bullsEye, alt: "exceptional", boxSize: "25px" },
   };
 
-  return <Image {...emojiMap[rating]} />;
+  return (
+    <Image
+      filter="
+        drop-shadow(-1px -1px 0 white)
+        drop-shadow(1px -1px 0 white)
+        drop-shadow(-1px 1px 0 white)
+        drop-shadow(1px 1px 0 white)
+      "
+      {...emojiMap[rating]}
+      {...style}
+    />
+  );
 };
 
 export default Emoji;
