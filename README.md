@@ -11,6 +11,7 @@ A responsive single-page application built with React and Vite. It uses the [RAW
 ## Tech Stack
 
 - **React** (with Hooks)
+- **TypeScript** – Type safety
 - **Vite** – Fast development/build tool
 - **Chakra UI** – Component library and styling system
 - **Axios** – HTTP client
