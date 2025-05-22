@@ -61,7 +61,7 @@ Create a `.env` file in the root directory:
 VITE_RAWG_API_KEY=your_rawg_api_key
 ```
 
-This key is injected at build time. You can obtain one from [RAWG.io](https://rawg.io/apidocs).
+This key is injected at build time. You can get one from [RAWG.io](https://rawg.io/apidocs).
 
 ---
 
