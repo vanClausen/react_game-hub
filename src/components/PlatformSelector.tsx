@@ -3,17 +3,18 @@ import { BsChevronDown } from "react-icons/all";
 import usePlatforms, { Platform } from "../hooks/usePlatforms";
 
 interface Props {
-  selectedPlatform: Platform | null;
+  selectedPlatform?: number | null;
   onSelectPlatform: (platform: Platform | null) => void;
 }
 
 const PlatformSelector = ({ selectedPlatform, onSelectPlatform }: Props) => {
   const { data, error } = usePlatforms();
+  const platform = data?.results.find((p) => p.id === selectedPlatform);
   if (error) return null;
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        {selectedPlatform ? selectedPlatform.name : "Select Platform"}
+        {platform ? platform.name : "Select Platform"}
       </MenuButton>
       <MenuList>
         {selectedPlatform && (
