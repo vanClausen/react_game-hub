@@ -6,10 +6,10 @@ import SearchInput from "./SearchInput";
 import useGameQueryStore from "../store";
 
 const NavBar = () => {
-  const setSearchText = useGameQueryStore((select) => select.setSearchText);
+  const resetGameQuery = useGameQueryStore((select) => select.resetGameQuery);
   return (
     <HStack padding="10px">
-      <Box as="button" onClick={() => setSearchText("")} flexShrink={0}>
+      <Box as="button" onClick={() => resetGameQuery()} flexShrink={0}>
         <Image src={logo} boxSize="60px" objectFit="cover" />
       </Box>
       <SearchInput />
