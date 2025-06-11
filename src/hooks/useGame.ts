@@ -1,19 +1,11 @@
 import APIClient from "../services/api-client";
 import { useQuery } from "@tanstack/react-query";
+import { Game } from "./entities/Game";
 
-interface GameDetails {
-  id: number;
-  slug: string;
-  name: string;
-  name_original: string;
-  description: string;
-  description_raw: string;
-}
-
-const apiClient = new APIClient<GameDetails>("/games");
+const apiClient = new APIClient<Game>("/games");
 
 const useGame = (slug: string) => {
-  return useQuery<GameDetails, Error>({
+  return useQuery<Game, Error>({
     queryKey: ["game", slug],
     queryFn: () => apiClient.get(slug),
     // staleTime: 1000 * 60 * 60 * 24, // 24 hours
