@@ -18,7 +18,7 @@ const GameTrailer = ({ id }: Props) => {
   if (!firstTrailer) return null;
 
   return (
-    <AspectRatio maxH="100vh" ratio={16 / 9}>
+    <AspectRatio maxH="100vh" ratio={16 / 9} marginTop={5}>
       <video
         src={firstTrailer.data.max}
         title={firstTrailer.name}
