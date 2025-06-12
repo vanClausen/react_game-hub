@@ -23,24 +23,30 @@ const GenreList = () => {
 
   return (
     <>
-      <Heading fontSize="2xl" marginBottom={2}>
+      <Heading
+        fontSize="2xl"
+        marginBottom={2}
+        onClick={() => (selectedGenreId ? setSelectedGenreId(null) : undefined)}
+        cursor={selectedGenreId ? "pointer" : "default"}
+        _hover={selectedGenreId ? { color: "gray.200" } : {}}
+      >
         Genres
       </Heading>
       <List>
-        {selectedGenreId && (
-          <ListItem key="0" paddingY="5px">
-            <Button
-              whiteSpace="normal"
-              textAlign="left"
-              variant="link"
-              fontWeight="normal"
-              fontSize="m"
-              onClick={() => setSelectedGenreId(null)}
-            >
-              All Genres
-            </Button>
-          </ListItem>
-        )}
+        {/*{selectedGenreId && (*/}
+        {/*  <ListItem key="0" paddingY="5px">*/}
+        {/*    <Button*/}
+        {/*      whiteSpace="normal"*/}
+        {/*      textAlign="left"*/}
+        {/*      variant="link"*/}
+        {/*      fontWeight="normal"*/}
+        {/*      fontSize="m"*/}
+        {/*      onClick={() => setSelectedGenreId(null)}*/}
+        {/*    >*/}
+        {/*      All Genres*/}
+        {/*    </Button>*/}
+        {/*  </ListItem>*/}
+        {/*)}*/}
         {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>

@@ -2,12 +2,11 @@ import useTrailers from "../hooks/useTrailers";
 import { AspectRatio } from "@chakra-ui/react";
 
 interface Props {
-  id: number;
+  gameId: number;
 }
 
-const GameTrailer = ({ id }: Props) => {
-  const { data: gameTrailerList, isLoading, error } = useTrailers(id);
-  console.log("Game Trailer:", gameTrailerList);
+const GameTrailer = ({ gameId }: Props) => {
+  const { data: gameTrailerList, isLoading, error } = useTrailers(gameId);
 
   if (isLoading) return null;
 
