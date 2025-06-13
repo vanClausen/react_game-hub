@@ -10,7 +10,7 @@ interface Props {
 const GameAttributes = ({ game }: Props) => {
   return (
     <SimpleGrid
-      columns={{ base: 1, md: 2 }}
+      columns={{ base: 1, sm: 2 }}
       spacing={5}
       marginTop={5}
       maxW="1900px"
